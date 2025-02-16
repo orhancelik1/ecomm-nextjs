@@ -4,7 +4,7 @@ import { useProducts } from "@/query/products";
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
 import Loading from "@/components/ui/custom/loading";
-import ProductCard from "@/components/ui/custom/product-card";
+import ProductDetailCard from "@/components/ui/custom/product-detail-card";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -33,7 +33,7 @@ const ProductDetails = () => {
           <p className="text-sm">Back to Home</p>
         </div>
       </Link>
-      <ProductCard product={product} />
+      <ProductDetailCard product={product} />
     </div>
   );
 };
