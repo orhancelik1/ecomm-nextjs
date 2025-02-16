@@ -3,6 +3,7 @@
 import { ShoppingCart, User } from "lucide-react";
 import SearchBar from "./search";
 import { useCartTotal } from "@/lib/use-cart-total";
+import Image from "next/image";
 
 const Header = () => {
   const total = useCartTotal();
@@ -10,7 +11,9 @@ const Header = () => {
     <header className="bg-blue-500 text-white">
       <div className="flex items-center justify-between container py-4">
         <div className="flex items-center">
-          <div className="text-3xl font-bold w-[250px]">Vardabit</div>
+          <div className="text-3xl font-bold w-[250px]">
+            <Image src="/next.svg" alt="" width={100} height={100} />
+          </div>
           <div className="w-[350px]">
             <SearchBar />
           </div>
