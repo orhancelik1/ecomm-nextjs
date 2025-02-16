@@ -4,7 +4,7 @@ import { useProducts } from "@/query/products";
 import ProductsQuery from "@/components/parts/ProductsQuery";
 import ProductCard from "@/components/ui/custom/product-card";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import ResponsivePagination from "react-responsive-pagination";
 import Loading from "@/components/ui/custom/loading";
 
@@ -94,6 +94,14 @@ const Products = () => {
     router.replace(`?${decodeURIComponent(params.toString())}`);
   };
 
+  useEffect(() => {
+    if (page !== 1 && (models.length > 0 || brands.length > 0)) {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("page", "1");
+      router.push(`?${params.toString()}`);
+    }
+  }, [models, brands]);
+
   return (
     <div className="grid grid-cols-10 gap-6">
       <div className="col-span-2">
@@ -116,7 +124,7 @@ const Products = () => {
                 ))
               ) : (
                 <div className="col-span-12 text-center">
-                  <Loading message="No products found" />
+                  <p>No products found</p>
                 </div>
               )}
             </>
