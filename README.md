@@ -1,4 +1,4 @@
-This project is using the following stack:
+## This project is using the following stack:
 
 - Framework - Next.js (App Router)
 - Language - TypeScript
