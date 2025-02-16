@@ -94,14 +94,6 @@ const Products = () => {
     router.replace(`?${decodeURIComponent(params.toString())}`);
   };
 
-  // useEffect(() => {
-  //   if (page !== 1 && (models.length > 0 || brands.length > 0)) {
-  //     const params = new URLSearchParams(searchParams.toString());
-  //     params.set("page", "1");
-  //     router.push(`?${params.toString()}`);
-  //   }
-  // }, [models, brands]);
-
   useEffect(() => {
     if (totalPages < 2) {
       const params = new URLSearchParams(searchParams.toString());
