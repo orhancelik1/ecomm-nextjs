@@ -39,7 +39,7 @@ export default function RootLayout({
           <Providers>
             <Hydration />
             <Header />
-            <main className="container grid grid-cols-12 md:gap-6 mt-8">
+            <main className="container grid grid-cols-12 md:gap-6 my-8">
               <div className="col-span-10">{children}</div>
               <div className="col-span-2">
                 <Cart />
